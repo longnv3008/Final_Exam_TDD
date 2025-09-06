@@ -3,6 +3,8 @@
 Java/Maven project implementing an online bookshop **purchasing flow** with **TDD** using **JUnit 5**, **Mockito**, **JaCoCo**.
 
 ## Project layout
+
+```
 pom.xml
 src/
 ├── main/java/com/example/bookstore/
@@ -30,11 +32,13 @@ src/
     └── service/
         ├── CartServiceTest.java
         └── OrderServiceTest.java
-
+```
 
 ## Build & test
+
 ```bash
 # JDK 17 recommended
 mvn clean verify
 # Coverage report: open
 # target/site/jacoco/index.html
+```
