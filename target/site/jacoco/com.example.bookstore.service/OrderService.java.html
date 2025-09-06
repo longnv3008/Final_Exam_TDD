@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bookstore-tdd</a> &gt; <a href="index.source.html" class="el_package">com.example.bookstore.service</a> &gt; <span class="el_source">OrderService.java</span></div><h1>OrderService.java</h1><pre class="source lang-java linenums">package com.example.bookstore.service;
+
+import com.example.bookstore.model.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L8">public class OrderService {</span>
+
+    public List&lt;Order&gt; checkout(Cart cart){
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (cart == null) throw new IllegalArgumentException(&quot;cart must not be null&quot;);</span>
+<span class="fc" id="L12">        List&lt;Order&gt; orders = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        for (CartItem item : cart.getItems()){</span>
+<span class="fc" id="L14">            Book book = item.getBook();</span>
+<span class="fc" id="L15">            int qty = item.getQuantity();</span>
+            // reduce stock by qty (assume qty already capped when added)
+<span class="fc" id="L17">            int remain = book.getStockQuantity() - qty;</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">            if (remain &lt; 0) remain = 0;</span>
+<span class="fc" id="L19">            book.setStockQuantity(remain);</span>
+<span class="fc" id="L20">            orders.add(new Order(book, qty));</span>
+<span class="fc" id="L21">        }</span>
+        // clear cart
+<span class="fc" id="L23">        cart.getItems().clear();</span>
+<span class="fc" id="L24">        return orders;</span>
+    }
+
+    public void cancel(Order order){
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (order == null) throw new IllegalArgumentException(&quot;order must not be null&quot;);</span>
+<span class="fc" id="L29">        Book book = order.getBook();</span>
+<span class="fc" id="L30">        book.setStockQuantity(book.getStockQuantity() + order.getQuantity());</span>
+<span class="fc" id="L31">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

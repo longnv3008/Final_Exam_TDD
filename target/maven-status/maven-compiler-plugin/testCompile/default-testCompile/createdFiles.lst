@@ -1,0 +1,4 @@
+com\example\bookstore\model\ModelPojoTest.class
+com\example\bookstore\service\OrderServiceTest.class
+com\example\bookstore\service\CartServiceTest.class
+com\example\bookstore\model\enums\EnumsTest.class

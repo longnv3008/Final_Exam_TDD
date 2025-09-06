@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bookstore-tdd</a> &gt; <a href="index.source.html" class="el_package">com.example.bookstore.model</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package com.example.bookstore.model;
+
+public class Book {
+    private Long id;
+    private String title;
+    private String author;
+    private String publisher;
+    private String isbn;
+    private double price;
+    private int stockQuantity;
+    private String description;
+    private Category category;
+
+<span class="fc" id="L14">    public Book(){}</span>
+<span class="fc" id="L15">    public Book(Long id, String title, int stockQuantity, double price){</span>
+<span class="fc" id="L16">        this.id=id; this.title=title; this.stockQuantity=stockQuantity; this.price = price;</span>
+<span class="fc" id="L17">    }</span>
+
+    public Long getId(){
+<span class="fc" id="L20">        return id;</span>
+    }
+    public void setId(Long id){
+<span class="fc" id="L23">        this.id=id;</span>
+<span class="fc" id="L24">    }</span>
+    public String getTitle(){
+<span class="fc" id="L26">        return title;</span>
+    }
+    public void setTitle(String title){
+<span class="fc" id="L29">        this.title=title;</span>
+<span class="fc" id="L30">    }</span>
+    public String getAuthor(){
+<span class="fc" id="L32">        return author;</span>
+    }
+    public void setAuthor(String author){
+<span class="fc" id="L35">        this.author=author;</span>
+<span class="fc" id="L36">    }</span>
+    public String getPublisher(){
+<span class="fc" id="L38">        return publisher;</span>
+    }
+    public void setPublisher(String publisher){
+<span class="fc" id="L41">        this.publisher=publisher;</span>
+<span class="fc" id="L42">    }</span>
+    public String getIsbn(){
+<span class="fc" id="L44">        return isbn;</span>
+    }
+    public void setIsbn(String isbn){
+<span class="fc" id="L47">        this.isbn=isbn;</span>
+<span class="fc" id="L48">    }</span>
+    public double getPrice(){
+<span class="fc" id="L50">        return price;</span>
+    }
+    public void setPrice(double price){
+<span class="fc" id="L53">        this.price=price;</span>
+<span class="fc" id="L54">    }</span>
+    public int getStockQuantity(){
+<span class="fc" id="L56">        return stockQuantity;</span>
+    }
+    public void setStockQuantity(int stockQuantity){
+<span class="fc" id="L59">        this.stockQuantity=stockQuantity;</span>
+<span class="fc" id="L60">    }</span>
+    public String getDescription(){
+<span class="fc" id="L62">        return description;</span>
+    }
+    public void setDescription(String description){
+<span class="fc" id="L65">        this.description=description;</span>
+<span class="fc" id="L66">    }</span>
+    public Category getCategory(){
+<span class="fc" id="L68">        return category;</span>
+    }
+    public void setCategory(Category category){
+<span class="fc" id="L71">        this.category=category;</span>
+<span class="fc" id="L72">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

@@ -1,0 +1,13 @@
+com\example\bookstore\model\Order.class
+com\example\bookstore\model\User.class
+com\example\bookstore\service\OrderService.class
+com\example\bookstore\model\Book.class
+com\example\bookstore\model\Payment.class
+com\example\bookstore\model\enums\PaymentMethod.class
+com\example\bookstore\model\Review.class
+com\example\bookstore\service\CartService.class
+com\example\bookstore\model\Cart.class
+com\example\bookstore\model\enums\PaymentStatus.class
+com\example\bookstore\model\enums\UserRole.class
+com\example\bookstore\model\Category.class
+com\example\bookstore\model\CartItem.class

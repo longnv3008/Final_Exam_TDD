@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CartService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bookstore-tdd</a> &gt; <a href="index.source.html" class="el_package">com.example.bookstore.service</a> &gt; <span class="el_source">CartService.java</span></div><h1>CartService.java</h1><pre class="source lang-java linenums">package com.example.bookstore.service;
+
+import com.example.bookstore.model.*;
+
+<span class="fc" id="L5">public class CartService {</span>
+
+    public Cart createCart(User user){
+<span class="fc" id="L8">        return new Cart(user);</span>
+    }
+
+    /**
+     * Add book into cart. If desiredQty &lt;= 0 -&gt; set to 1.
+     * If desired qty exceeds stock -&gt; cap at stock.
+     * If stock is 0 -&gt; do not add.
+     * If item exists, replace quantity with the capped value (simplest behavior).
+     * @return actual quantity added to cart
+     */
+    public int addToCart(Cart cart, Book book, int desiredQty){
+<span class="fc bfc" id="L19" title="All 4 branches covered.">        if (book == null || cart == null) throw new IllegalArgumentException(&quot;cart/book must not be null&quot;);</span>
+<span class="fc" id="L20">        int stock = Math.max(0, book.getStockQuantity());</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (stock == 0) return 0;</span>
+<span class="fc" id="L22">        int qty = Math.max(1, desiredQty);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (qty &gt; stock) qty = stock;</span>
+
+        // find existing
+<span class="fc" id="L26">        CartItem existing = cart.getItems().stream()</span>
+<span class="fc" id="L27">                .filter(ci -&gt; ci.getBook().getId().equals(book.getId()))</span>
+<span class="fc" id="L28">                .findFirst().orElse(null);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (existing == null){</span>
+<span class="fc" id="L30">            cart.getItems().add(new CartItem(book, qty));</span>
+        }else{
+<span class="fc" id="L32">            existing.setQuantity(qty);</span>
+        }
+<span class="fc" id="L34">        return qty;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
