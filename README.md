@@ -7,31 +7,31 @@ Java/Maven project implementing an online bookshop **purchasing flow** with **TD
 ```
 pom.xml
 src/
-├── main/java/com/example/bookstore/
-│   ├── model/
-│   │   ├── User.java
-│   │   ├── Cart.java
-│   │   ├── CartItem.java
-│   │   ├── Category.java
-│   │   ├── Book.java
-│   │   ├── Order.java
-│   │   ├── Review.java
-│   │   ├── Payment.java
-│   │   └── model/enums/
-│   │       ├── UserRole.java
-│   │       ├── PaymentMethod.java
-│   │       └── PaymentStatus.java
-│   └── service/
-│       ├── CartService.java
-│       └── OrderService.java
-└── test/java/com/example/bookstore/
-    ├── model/
-    │   ├── ModelPojoTest.java
-    │   └── model/enums/
-    │       └── EnumsTest.java
-    └── service/
-        ├── CartServiceTest.java
-        └── OrderServiceTest.java
+ ├─ main/java/com/example/bookstore/
+ │   ├─ model/
+ │   │   ├─ User.java
+ │   │   ├─ Cart.java
+ │   │   ├─ CartItem.java
+ │   │   ├─ Category.java
+ │   │   ├─ Book.java
+ │   │   ├─ Order.java
+ │   │   ├─ Review.java
+ │   │   └─ Payment.java
+ │   ├─ model/enums/
+ │   │   ├─ UserRole.java
+ │   │   ├─ PaymentMethod.java
+ │   │   └─ PaymentStatus.java
+ │   └─ service/
+ │       ├─ CartService.java
+ │       └─ OrderService.java
+ └─ test/java/com/example/bookstore/
+     ├─ model/
+     │   └─ ModelPojoTest.java
+     ├─ model/enums/
+     │   └─ EnumsTest.java
+     └─ service/
+         ├─ CartServiceTest.java
+         └─ OrderServiceTest.java
 ```
 
 ## Build & test
