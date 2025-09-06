@@ -5,16 +5,32 @@ Java/Maven project implementing an online bookshop **purchasing flow** with **TD
 ## Project layout
 pom.xml
 src/
-├─ main/java/com/example/bookstore/
-│ ├─ model/ # User, Cart, CartItem, Category, Book, Order, Review, Payment
-│ ├─ model/enums/ # UserRole, PaymentMethod, PaymentStatus
-│ └─ service/ # CartService, OrderService
-└─ test/java/com/example/bookstore/
-├─ model/ModelPojoTest.java
-├─ model/enums/EnumsTest.java
-└─ service/
-├─ CartServiceTest.java
-└─ OrderServiceTest.java
+ ├─ main/java/com/example/bookstore/
+ │   ├─ model/
+ │   │   ├─ User.java
+ │   │   ├─ Cart.java
+ │   │   ├─ CartItem.java
+ │   │   ├─ Category.java
+ │   │   ├─ Book.java
+ │   │   ├─ Order.java
+ │   │   ├─ Review.java
+ │   │   └─ Payment.java
+ │   ├─ model/enums/
+ │   │   ├─ UserRole.java
+ │   │   ├─ PaymentMethod.java
+ │   │   └─ PaymentStatus.java
+ │   └─ service/
+ │       ├─ CartService.java
+ │       └─ OrderService.java
+ └─ test/java/com/example/bookstore/
+     ├─ model/
+     │   └─ ModelPojoTest.java
+     ├─ model/enums/
+     │   └─ EnumsTest.java
+     └─ service/
+         ├─ CartServiceTest.java
+         └─ OrderServiceTest.java
+
 
 ## Build & test
 ```bash
